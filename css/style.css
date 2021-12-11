@@ -1,0 +1,211 @@
+body {
+  font-family: sans-serif;
+  background-color: #181D27;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #a0a0cf;
+}
+
+:root {
+  --main-border-width: 3px;
+  --main-border-color: #ffffff89;
+}
+
+@font-face {
+  font-family: Retroica;
+  src: url(../assets/Retroica.ttf);
+}
+
+html,
+.fullscreen {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.container {
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 2em;
+  font-family: Retroica;
+  min-width: 600px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.49);
+}
+
+.styled-table thead tr {
+  background-color: #8B8AAB;
+  color: white;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody {
+  color: #bbe;
+}
+
+.styled-table th:first-of-type {
+  width: 50px;
+}
+
+.styled-table th:last-of-type {
+  width: 50px;
+}
+
+.styled-table th {
+  width: 750px;
+}
+
+.styled-table tbody tr {
+  text-align: left;
+  border-bottom: var(--main-border-width) solid var(--main-border-color);
+  background-color: #3B3E50;
+}
+
+.styled-table tbody td {
+  border-left: var(--main-border-width) solid var(--main-border-color);
+  border-right: var(--main-border-width) solid var(--main-border-color);
+}
+
+.styled-table thead th {
+  border: var(--main-border-width) solid var(--main-border-color);
+}
+
+.styled-table tbody td:first-child {
+  border: 0px
+}
+
+.styled-table tbody td:last-child {
+  border: 0px
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #a0a0cf;
+}
+
+.styled-table thead th {
+  border-top: 0px;
+}
+
+.styled-table thead th:first-of-type {
+  border-left: 0px;
+}
+
+.styled-table thead th:last-of-type {
+  border-right: 0px;
+}
+
+td.grn {
+  background-color: #BAFFC9;
+}
+
+td.red {
+  background-color: #FFB3BA;
+}
+
+td.yel {
+  background-color: #FFFFBA;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.navbar {
+  background-color: #3B3E50;
+  height: 100px;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.49);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.inner-navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.full {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.logo-image {
+  height: 75%;
+}
+
+.spacer {
+  width: 100%
+}
+
+.navbar-text {
+  font-size: 24px;
+  color: #bbe;
+  font-family: Retroica;
+  transition: color 250ms ease-in-out;
+}
