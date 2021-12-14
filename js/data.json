@@ -1,64 +1,89 @@
 {
-    "patientData" : [
+    "firstName": "James",
+    "lastName": "Blunt",
+    "dateOfBirth": "11-05-1952",
+    "hospitalNumber": "1234567",
+    "referralDate": "11-05-2021",
+    "milestones": [
         {
-            "firstName": "James",
-            "surName": "Blunt",
-            "hospitalNumber": "1234567",
-            "referralDate": "1/04/2021",
-            "testsDates": {
-                "chestXray": "04/05/2021 15:01",
-                "CTThorax": "29/05/2021 16:02",
-                "PET_CT": "02/05/2021 10:55",
-                "EBUS": "28/06/2021 09:55"
-            }
+            "milestoneType": {
+                "referenceName": "Plain chest X-ray (procedure)",
+                "name": "Chest X-Ray"
+            },
+            "addedAt": "9-05-2021 15:01",
+            "updatedAt": "10-05-2021 15:55",
+            "completedOn": "10-05-2021 15:55",
+            "currentState": "COMPLETED"
         },
         {
-            "firstName": "Dave",
-            "surName": "Blunt",
-            "hospitalNumber": "1234567",
-            "referralDate": "11/05/2021",
-            "testsDates": {
-                "chestXray": "10/05/2021 15:01",
-                "CTThorax": "21/05/2021 16:02",
-                "PET_CT": "30/05/2021 10:55",
-                "EBUS": "05/06/2021 09:55"
-            }
+            "milestoneType": {
+                "referenceName": "Triage",
+                "name": "Triage"
+            },
+            "addedAt": "15-05-2021 08:55",
+            "updatedAt": "15-05-2021 08:55",
+            "completedOn": "15-05-2021 08:55",
+            "currentState": "COMPLETED"
         },
         {
-            "firstName": "Bob",
-            "surName": "Blunt",
-            "hospitalNumber": "1234567",
-            "referralDate": "11/07/2021",
-            "testsDates": {
-                "chestXray": "10/03/2021 15:01",
-                "CTThorax": "21/03/2021 16:02",
-                "PET_CT": "30/03/2021 10:55",
-                "EBUS": "05/04/2021 09:55"
-            }
+            "milestoneType": {
+                "referenceName": "CT of Thorax",
+                "name": " CT thorax "
+            },
+            "addedAt": "21-05-2021 16:02",
+            "updatedAt": "23-05-2021 11:25",
+            "completedOn": "23-05-2021 11:255",
+            "currentState": "COMPLETED"
         },
         {
-            "firstName": "Jenny",
-            "surName": "Blunt",
-            "hospitalNumber": "1234567",
-            "referralDate": "11/03/2021",
-            "testsDates": {
-                "chestXray": "4/05/2021 15:01",
-                "CTThorax": "8/05/2021 16:02",
-                "PET_CT": "23/05/2021 10:55",
-                "EBUS": "12/06/2021 09:55"
-            }
+            "milestoneType": {
+                "referenceName": "Clinic",
+                "name": "clinic"
+            },
+            "addedAt": "24-05-2021 10:55",
+            "updatedAt": "25-05-2021 10:05",
+            "completedOn": "25-05-2021 10:05",
+            "currentState": "COMPLETED"
         },
         {
-            "firstName": "Eric",
-            "surName": "Smith",
-            "hospitalNumber": "1234567",
-            "referralDate": "11/04/2021",
-            "testsDates": {
-                "chestXray": "9/06/2021 15:01",
-                "CTThorax": "20/06/2021 16:02",
-                "PET_CT": "29/06/2021 10:55",
-                "EBUS": "4/07/2021 09:55"
-            }
+            "milestoneType": {
+                "referenceName": "PET CT of whole body",
+                "name": "PET-CT"
+            },
+            "addedAt": "25-05-2021 10:05",
+            "updatedAt": "06-06-2021 12:55",
+            "completedOn": "06-06-2021 12:55",
+            "currentState": "COMPLETED"
+        },
+        {
+            "milestoneType": {
+                "referenceName": "Endobronchial ultrasonography guided transbronchial needle aspiration",
+                "name": "EBUS"
+            },
+            "addedAt": "07-05-2021 10:55",
+            "updatedAt": "07-06-2021 12:55",
+            "completedOn": "09-06-2021 12:55",
+            "currentState": "COMPLETED"
+        },
+        {
+            "milestoneType": {
+                "referenceName": "Specialist multidisciplinary team",
+                "name": "MDT"
+            },
+            "addedAt": "09-06-2021 11:59",
+            "updatedAt": "11-06-2021 14:31",
+            "completedOn": "11-06-2021 14:31",
+            "currentState": "COMPLETED"
+        },
+        {
+            "milestoneType": {
+                "referenceName": "Thoracic surgery",
+                "name": "Surgery"
+            },
+            "addedAt": "11-06-2021 14:31",
+            "updatedAt": "31-06-2021 14:31",
+            "completedOn": "31-06-2021 14:31",
+            "currentState": "COMPLETED"
         }
     ]
 }
