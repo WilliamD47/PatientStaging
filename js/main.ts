@@ -99,6 +99,15 @@ interface Milestone {
     currentState: String
 }
 
+interface StripeSegment {
+    length: Number,
+    colourClass: String,
+    startDate: String,
+    endDate: String,
+    type: String
+}
+
+
 interface Patient {
     firstName: String,
     lastName: String,
@@ -139,7 +148,8 @@ function AddToHTML(personData) {
     // Making Rows
     const nameCell = row.insertCell(0)
     nameCell.innerHTML = fullName
-    const middleCell = row.insertCell(1)
+    var middleCell = row.insertCell(1)
+    
     const dateCell = row.insertCell(2)
     dateCell.innerHTML = patient.birthDate.toLocaleDateString()
     var fullTable = ''
@@ -150,15 +160,23 @@ function AddToHTML(personData) {
         var last = new Date(element.completedOn)
         var secondsDifference = last.getTime() - first.getTime()
         if (secondsDifference != 0 ){
-            secondsDifference = (secondsDifference / 200 ) * 2
+            var length = (secondsDifference / 200 ) * 2
+        } else {
+            var length = 0
         }
-        lengths.push(secondsDifference / 86400)
+        const stripeSegment: StripeSegment = {
+            length: length,
+            colourClass: "grn",
+            startDate: first.toLocaleDateString(),
+            endDate: last.toLocaleDateString(),
+            type: element.milestoneType.name
+        }
+        lengths.push(stripeSegment)
     })
-
     lengths.forEach(element => {
-        
+        fullTable += '<td class="grn" style="width: '+element+'px"><div class="tooltip">'+element.type+'<span class="tooltiptext">Start:'+String(element.startDate)+'\nEnd:'+element.endDate+'</span></div></td>'
     })
-    console.log(lengths)
+    middleCell.innerHTML = '<table border="0" summary=""><tr id="tr">'+fullTable+'</tr></table>'
 }
 
 window.onload = () => {
