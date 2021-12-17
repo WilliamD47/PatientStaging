@@ -121,13 +121,30 @@ function AddToHTML(personData) {
     dateCell.innerHTML = patient.birthDate.toLocaleDateString();
     var fullTable = '';
     var lengths = [];
+    var endDates = [];
+    var elementProgress = 0;
     patient.milestones.forEach(element => {
         // Get difference between dates
         var first = new Date(element.addedAt);
         var last = new Date(element.completedOn);
+        if (elementProgress != 0) {
+            if (first != new Date(patient.milestones[elementProgress - 1].completedOn)) {
+                const previousLast = new Date(patient.milestones[elementProgress - 1].completedOn);
+                const redStripeSegment = {
+                    length: ((first.getTime() - previousLast.getTime()) / 10000000) * 2,
+                    colourClass: "red",
+                    startDate: previousLast.toLocaleDateString(),
+                    endDate: first.toLocaleDateString(),
+                    type: ""
+                };
+                if (redStripeSegment.length > 0) {
+                    lengths.push(redStripeSegment);
+                }
+            }
+        }
         var secondsDifference = last.getTime() - first.getTime();
         if (secondsDifference != 0) {
-            var length = (secondsDifference / 200) * 2;
+            var length = (secondsDifference / 10000000) * 2;
         }
         else {
             var length = 0;
@@ -137,14 +154,18 @@ function AddToHTML(personData) {
             colourClass: "grn",
             startDate: first.toLocaleDateString(),
             endDate: last.toLocaleDateString(),
-            type: element.milestoneType.name
+            type: ""
         };
         lengths.push(stripeSegment);
+        elementProgress += 1;
     });
+    var totalLength = 0;
     lengths.forEach(element => {
-        fullTable += '<td class="grn" style="width: ' + element + 'px"><div class="tooltip">' + element.type + '<span class="tooltiptext">Start:' + String(element.startDate) + '\nEnd:' + element.endDate + '</span></div></td>';
+        totalLength += element.length;
+        fullTable += '<td class=' + element.colourClass + ' style="width: ' + String(element.length) + 'px"></td>';
     });
     middleCell.innerHTML = '<table border="0" summary=""><tr id="tr">' + fullTable + '</tr></table>';
+    middleCell.style.width = String((totalLength / 100000) + 200) + "px";
 }
 window.onload = () => {
     'use strict';
