@@ -118,17 +118,7 @@ html,
   border-right: 0px;
 }
 
-td.grn {
-  background-color: #BAFFC9;
-}
 
-td.red {
-  background-color: #FFB3BA;
-}
-
-td.yel {
-  background-color: #FFFFBA;
-}
 
 .tooltip {
   position: relative;
@@ -138,7 +128,7 @@ td.yel {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 250px;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -208,4 +198,44 @@ td.yel {
   color: #bbe;
   font-family: Retroica;
   transition: color 250ms ease-in-out;
+}
+
+.tooltiptext {
+  font-size: 12px;
+}
+
+
+
+td.grn {
+  border-color: transparent;
+  background-color: #BAFFC9;
+}
+
+.td {
+  height: 100%;
+  border-width: 0px;
+  border-color: transparent;
+}
+
+td.red {
+  border-color: transparent;
+  background-color: #FFB3BA;
+}
+
+td.yel {
+  background-color: #FFFFBA;
+}
+
+td.white {
+  background-color: #a0a0cf;
+}
+
+.jstable td {
+  border: 0;
+  font-size: 16px;
+  border-left: none;
+  border-right: none;
+  padding-left: 0px;
+  padding-right: 0px;
+
 }
